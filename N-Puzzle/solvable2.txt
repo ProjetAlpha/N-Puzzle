@@ -1,0 +1,1 @@
+Can't generate a puzzle with size lower than 2. It says so in the help. Dummy.

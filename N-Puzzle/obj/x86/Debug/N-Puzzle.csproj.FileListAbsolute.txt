@@ -1,0 +1,12 @@
+/home/user42/Projects/N-Puzzle/N-Puzzle/bin/Debug/N-Puzzle.exe
+/home/user42/Projects/N-Puzzle/N-Puzzle/bin/Debug/N-Puzzle.pdb
+/home/user42/Projects/N-Puzzle/N-Puzzle/bin/Debug/C5.dll
+/home/user42/Projects/N-Puzzle/N-Puzzle/bin/Debug/Priority Queue.dll
+/home/user42/Projects/N-Puzzle/N-Puzzle/bin/Debug/C5.xml
+/home/user42/Projects/N-Puzzle/N-Puzzle/bin/Debug/Priority Queue.pdb
+/home/user42/Projects/N-Puzzle/N-Puzzle/bin/Debug/Priority Queue.xml
+/home/user42/Projects/N-Puzzle/N-Puzzle/obj/x86/Debug/N-Puzzle.csprojAssemblyReference.cache
+/home/user42/Projects/N-Puzzle/N-Puzzle/obj/x86/Debug/N-Puzzle.csproj.CoreCompileInputs.cache
+/home/user42/Projects/N-Puzzle/N-Puzzle/obj/x86/Debug/N-Puzzle.csproj.CopyComplete
+/home/user42/Projects/N-Puzzle/N-Puzzle/obj/x86/Debug/N-Puzzle.exe
+/home/user42/Projects/N-Puzzle/N-Puzzle/obj/x86/Debug/N-Puzzle.pdb

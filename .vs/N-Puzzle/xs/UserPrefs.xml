@@ -1,0 +1,41 @@
+﻿<Properties StartupConfiguration="{F4B42E66-A31B-4FCB-B7D1-125DBCE6F36F}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="N-Puzzle/src/Solver.cs">
+    <Files>
+      <File FileName="N-Puzzle/Program.cs" Line="18" Column="35" />
+      <File FileName="N-Puzzle/Properties/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="N-Puzzle/packages.config" Line="1" Column="1" />
+      <File FileName="N-Puzzle/src/Parser.cs" Line="206" Column="73" />
+      <File FileName="N-Puzzle/src/CheckValidity.cs" Line="112" Column="34" />
+      <File FileName="N-Puzzle/src/Models/Node.cs" Line="16" Column="37" />
+      <File FileName="N-Puzzle/src/Models/ArgumentType.cs" Line="4" Column="12" />
+      <File FileName="N-Puzzle/src/MapGenerator.cs" Line="30" Column="66" />
+      <File FileName="N-Puzzle/src/Solver.cs" Line="78" Column="85" />
+      <File FileName="N-Puzzle/src/Models/Vector2.cs" Line="6" Column="14" />
+      <File FileName="N-Puzzle/src/Models/GoalMap.cs" Line="12" Column="62" />
+      <File FileName="N-Puzzle/src/Heuristic.cs" Line="168" Column="44" />
+      <File FileName="N-Puzzle/src/Models/NextBoardPosition.cs" Line="8" Column="55" />
+      <File FileName="N-Puzzle/N-Puzzle.csproj" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="N-Puzzle" expanded="True">
+            <Node name="N-Puzzle" expanded="True">
+              <Node name="src" expanded="True">
+                <Node name="Models" expanded="True" />
+                <Node name="Solver.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.N-Puzzle PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,7 @@
+/home/user42/Projects/N-Puzzle/N-Puzzle/obj/x86/Debug/.NETFramework,Version=v4.7.AssemblyAttribute.cs
+/home/user42/Projects/N-Puzzle/N-Puzzle/bin/Debug/N-Puzzle.pdb
+/home/user42/Projects/N-Puzzle/N-Puzzle/bin/Debug/N-Puzzle.exe
+/home/user42/Projects/N-Puzzle/N-Puzzle/obj/x86/Debug/N-Puzzle.exe
+/home/user42/Projects/N-Puzzle/N-Puzzle/obj/x86/Debug/N-Puzzle.pdb
+/home/user42/Projects/N-Puzzle/N-Puzzle/bin/Debug/C5.dll
+/home/user42/Projects/N-Puzzle/N-Puzzle/bin/Debug/Priority Queue.dll
