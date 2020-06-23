@@ -9,6 +9,7 @@ namespace NPuzzle.src.Models
         Manathan = 1 << 2,
         LinearConflict = 1 << 3,
         Hamming = 1 << 4,
-        InputFile = 1 << 5
+        MHC = 1 << 5,
+        InputFile = 1 << 6
     }
 }

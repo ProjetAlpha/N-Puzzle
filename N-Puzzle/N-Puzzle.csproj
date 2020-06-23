@@ -51,6 +51,7 @@
     <Compile Include="src\Models\GoalMap.cs" />
     <Compile Include="src\Heuristic.cs" />
     <Compile Include="src\Models\NextBoardPosition.cs" />
+    <Compile Include="src\Models\CornerTile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

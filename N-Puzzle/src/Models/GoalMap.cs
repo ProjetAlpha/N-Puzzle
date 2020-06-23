@@ -10,5 +10,7 @@ namespace NPuzzle.src.Models
         public Dictionary<int, Vector2> IndexMap { get; set; }
 
         public Dictionary<int, string> DigitStrRepresentation { get; set; }
+
+        public CornerTile[] Corners;
     }
 }

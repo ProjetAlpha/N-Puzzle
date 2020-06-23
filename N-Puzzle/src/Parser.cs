@@ -9,7 +9,9 @@ namespace NPuzzle.src
     {
         static string HelpMessage = "Usage" + Environment.NewLine + "./N-Puzzle [-h][TYPE][-i][PATH]." + Environment.NewLine +
         "-h : heuristic, -i : input file" + Environment.NewLine +
-            "TYPE : ML (manathan and linear conflict), M (manathan), E (euclidian), H (hamming)" + Environment.NewLine +
+            "TYPE : ML (manathan and linear conflict)," + Environment.NewLine + 
+            "M (manathan), E (euclidian), H (hamming)," + Environment.NewLine +
+            "MHC (manathan, hamming and corner)" + Environment.NewLine +
             "PATH : input file" + Environment.NewLine;
 
         static private int LineCounter = 0;
@@ -152,6 +154,11 @@ namespace NPuzzle.src
                 {
                     type |= ArgumentType.Hamming;
                 }
+
+                if (argv[0] == "-h" && argv[1] == "MHC")
+                {
+                    type |= ArgumentType.MHC;
+                }
             }
             else
             {
@@ -197,9 +204,16 @@ namespace NPuzzle.src
 
                         int[][] goalMap = MapGenerator.GetGoalMap(PuzzleSize,
                             out Dictionary<int, Vector2> IndexMap,
-                            out Dictionary<int, string> MapStrRepresentation
+                            out Dictionary<int, string> MapStrRepresentation,
+                            out CornerTile[] corners
                             );
-                        GoalMap map = new GoalMap() { Board = goalMap, IndexMap = IndexMap, DigitStrRepresentation = MapStrRepresentation };
+
+                        GoalMap map = new GoalMap{ 
+                            Board = goalMap,
+                            IndexMap = IndexMap,
+                            DigitStrRepresentation = MapStrRepresentation,
+                            Corners = corners
+                        };
 
                         // Initialize start node puzzle.
 

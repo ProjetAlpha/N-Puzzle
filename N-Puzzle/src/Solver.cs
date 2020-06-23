@@ -14,6 +14,7 @@ namespace NPuzzle.src
         private GoalMap _goalMap;
         private bool _isGoalReach;
         private int _goalNodeIndex;
+        private int _maxExpanded;
         private Dictionary<string, Node> _closedListHash = new Dictionary<string, Node>();
         private Dictionary<string, Node> _openListHash = new Dictionary<string, Node>();
 
@@ -28,12 +29,18 @@ namespace NPuzzle.src
         {
             if ((_type & ArgumentType.Euclidian) != 0)
                 Heuristic.EuclideanDistance(_goalMap, prevNode, newNode);
+
             if ((_type & ArgumentType.Manathan) != 0)
                 Heuristic.ManhattanDistance(_goalMap, prevNode, newNode);
+
             if ((_type & ArgumentType.LinearConflict) != 0)
                 Heuristic.ManathanLinearConflict(_goalMap, prevNode, newNode);
+
             if ((_type & ArgumentType.Hamming) != 0)
                 Heuristic.HammingDistance(_goalMap, prevNode, newNode);
+
+            if ((_type & ArgumentType.MHC) != 0)
+                Heuristic.MHC(_goalMap, prevNode, newNode);
         }
 
         private int[][] Swap(int[][] Board, Vector2 v1, Vector2 v2)
@@ -76,9 +83,8 @@ namespace NPuzzle.src
             Vector2 newZeroPosition = null;
 
             int i = 0;
-            // Opti'++ : - faire une seul boucle qui calcul les 4 heuristiques (reduit de X4 les boucles).
-            //           - tableau de 16 * 4 bits / case (reduit de X4 les boucles).
-            // 
+
+            //   OPTI : tableau de 16 * 4 bits / case (reduit de X4 les boucles).
             if (node.ZeroPosition != null)
             {
                 Vector2 pos = node.ZeroPosition;
@@ -246,11 +252,11 @@ namespace NPuzzle.src
             }
 
             Console.WriteLine();
-            Console.WriteLine("A solution has been found in {0}", totalMoves);
-            Console.WriteLine("Complexity in time: {0} opened states in total", _openListHash.Count);
+            Console.WriteLine("A solution has been found in {0} moves.", totalMoves);
+            Console.WriteLine("Complexity in time: {0} opened states in total.", _openListHash.Count);
+            Console.WriteLine("Complexity in size: {0} maximum opened states at once.", _maxExpanded);
 
             // TODO: complexity time / space.
-            // space:len(open_set), time=len(closed_set)
             // A solution has been found in 14 move(s) and 0.002s.
             // Complexity in time: 52 opened states in total.
             // Complexity in size: 31 maximum opened states at once.
@@ -295,6 +301,9 @@ namespace NPuzzle.src
                         _openListHash.Add(nodes[i].Id, nodes[i]);
                     }
                 }
+
+                if (_maxExpanded < priorityQueue.Count)
+                    _maxExpanded = priorityQueue.Count;
             }
         }
     }

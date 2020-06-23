@@ -21,14 +21,68 @@ namespace NPuzzle.src
             return x << 16 | y;
         }
 
+        /* [c0] 2 [c2]
+         *  8   0   4
+         * [c1] 6 [c3]
+         */        
+        private static void SetCorner(int col, int row, int size, CornerTile[] corners, int n)
+        {
+            // X = row, Y = col
+            if (col == 0 && row == 0)
+            {
+                corners[0] = new CornerTile
+                {
+                    Value = n,
+                    Position = new Vector2{ X = 0, Y = 0 },
+                    AdjacentTileX = new Vector2{ X = 0 + 1, Y = 0},
+                    AdjacentTileY = new Vector2{ X = 0, Y = 0 + 1 }
+                };
+            }
+
+            if (col == size - 1 && row == 0)
+            {
+                corners[1] = new CornerTile
+                {
+                    Value = n,
+                    Position = new Vector2{ X = 0, Y = size - 1 },
+                    AdjacentTileX = new Vector2{ X = 0 + 1, Y = size - 1 },
+                    AdjacentTileY = new Vector2{ X = 0, Y = size - 1 - 1}
+                };
+            }
+
+            if (col == 0 && row == size - 1)
+            {
+                corners[2] = new CornerTile
+                {
+                    Value = n,
+                    Position = new Vector2{ X = size - 1, Y = 0 },
+                    AdjacentTileX = new Vector2{ X = size - 1 - 1, Y = 0},
+                    AdjacentTileY = new Vector2{ X = size - 1, Y = 0 + 1}
+                };
+            }
+
+            if (col == size - 1 && row == size - 1)
+            {
+                corners[3] = new CornerTile
+                {
+                    Value = n,
+                    Position = new Vector2{ X = size - 1, Y = size - 1 },
+                    AdjacentTileX = new Vector2 { X = size - 1 - 1, Y = size - 1},
+                    AdjacentTileY = new Vector2 { X = size - 1, Y = size - 1 - 1}
+                };
+            }
+        }
+
         public static int[][] GetGoalMap(int size,
             out Dictionary<int, Vector2> IndexMap,
-            out Dictionary<int, string> MapStrRepresentation)
+            out Dictionary<int, string> MapStrRepresentation,
+            out CornerTile[] corners)
         {
-            int[][] tab = new int[size][];
             IndexMap = new Dictionary<int, Vector2>();
             MapStrRepresentation = new Dictionary<int, string>();
+            corners = new CornerTile[4];
 
+            int[][] tab = new int[size][];
             for (int i = 0; i < size; i++)
             {
                 tab[i] = new int[size];
@@ -45,6 +99,8 @@ namespace NPuzzle.src
 
                 IndexMap.Add(tab[col][row], new Vector2 { X = row, Y = col });
                 MapStrRepresentation.Add(tab[col][row], tab[col][row].ToString());
+
+                SetCorner(col, row, size, corners, n);
 
                 n++;
                 if (turnCounter == 4)

@@ -15,8 +15,7 @@ namespace NPuzzle
             Parser.GetOptions(argv);
             sw.Stop();
 
-            Console.WriteLine("Time taken: {0}ms", sw.Elapsed.Milliseconds);
-            Console.WriteLine("Time taken: {0}s", sw.Elapsed.Seconds);
+            Console.WriteLine("Time taken: {0} s", sw.Elapsed.TotalSeconds);
         }
     }
 }

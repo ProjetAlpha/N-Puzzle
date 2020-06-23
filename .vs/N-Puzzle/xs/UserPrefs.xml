@@ -1,20 +1,21 @@
 ﻿<Properties StartupConfiguration="{F4B42E66-A31B-4FCB-B7D1-125DBCE6F36F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="N-Puzzle/src/Solver.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="N-Puzzle/src/Models/CornerTile.cs">
     <Files>
       <File FileName="N-Puzzle/Program.cs" Line="18" Column="35" />
       <File FileName="N-Puzzle/Properties/AssemblyInfo.cs" Line="1" Column="1" />
       <File FileName="N-Puzzle/packages.config" Line="1" Column="1" />
-      <File FileName="N-Puzzle/src/Parser.cs" Line="206" Column="73" />
+      <File FileName="N-Puzzle/src/Parser.cs" Line="157" Column="14" />
       <File FileName="N-Puzzle/src/CheckValidity.cs" Line="112" Column="34" />
       <File FileName="N-Puzzle/src/Models/Node.cs" Line="16" Column="37" />
-      <File FileName="N-Puzzle/src/Models/ArgumentType.cs" Line="4" Column="12" />
-      <File FileName="N-Puzzle/src/MapGenerator.cs" Line="30" Column="66" />
-      <File FileName="N-Puzzle/src/Solver.cs" Line="14" Column="19" />
+      <File FileName="N-Puzzle/src/Models/ArgumentType.cs" Line="11" Column="26" />
+      <File FileName="N-Puzzle/src/MapGenerator.cs" Line="46" Column="75" />
+      <File FileName="N-Puzzle/src/Solver.cs" Line="278" Column="27" />
       <File FileName="N-Puzzle/src/Models/Vector2.cs" Line="6" Column="14" />
       <File FileName="N-Puzzle/src/Models/GoalMap.cs" Line="12" Column="62" />
-      <File FileName="N-Puzzle/src/Heuristic.cs" Line="168" Column="1" />
+      <File FileName="N-Puzzle/src/Heuristic.cs" Line="114" Column="43" />
       <File FileName="N-Puzzle/src/Models/NextBoardPosition.cs" Line="8" Column="55" />
       <File FileName="N-Puzzle/N-Puzzle.csproj" Line="1" Column="1" />
+      <File FileName="N-Puzzle/src/Models/CornerTile.cs" Line="10" Column="9" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,8 +23,9 @@
           <Node name="N-Puzzle" expanded="True">
             <Node name="N-Puzzle" expanded="True">
               <Node name="src" expanded="True">
-                <Node name="Models" expanded="True" />
-                <Node name="Solver.cs" selected="True" />
+                <Node name="Models" expanded="True">
+                  <Node name="CornerTile.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
