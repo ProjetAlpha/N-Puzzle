@@ -9,10 +9,10 @@
       <File FileName="N-Puzzle/src/Models/Node.cs" Line="16" Column="37" />
       <File FileName="N-Puzzle/src/Models/ArgumentType.cs" Line="4" Column="12" />
       <File FileName="N-Puzzle/src/MapGenerator.cs" Line="30" Column="66" />
-      <File FileName="N-Puzzle/src/Solver.cs" Line="78" Column="85" />
+      <File FileName="N-Puzzle/src/Solver.cs" Line="14" Column="19" />
       <File FileName="N-Puzzle/src/Models/Vector2.cs" Line="6" Column="14" />
       <File FileName="N-Puzzle/src/Models/GoalMap.cs" Line="12" Column="62" />
-      <File FileName="N-Puzzle/src/Heuristic.cs" Line="168" Column="44" />
+      <File FileName="N-Puzzle/src/Heuristic.cs" Line="168" Column="1" />
       <File FileName="N-Puzzle/src/Models/NextBoardPosition.cs" Line="8" Column="55" />
       <File FileName="N-Puzzle/N-Puzzle.csproj" Line="1" Column="1" />
     </Files>

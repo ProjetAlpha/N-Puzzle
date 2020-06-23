@@ -9,7 +9,7 @@ namespace NPuzzle.src
     {
         static string HelpMessage = "Usage" + Environment.NewLine + "./N-Puzzle [-h][TYPE][-i][PATH]." + Environment.NewLine +
         "-h : heuristic, -i : input file" + Environment.NewLine +
-            "TYPE : ML (manathan and linear conflict), M (manathan), E (euclidian)" + Environment.NewLine +
+            "TYPE : ML (manathan and linear conflict), M (manathan), E (euclidian), H (hamming)" + Environment.NewLine +
             "PATH : input file" + Environment.NewLine;
 
         static private int LineCounter = 0;
@@ -146,6 +146,11 @@ namespace NPuzzle.src
                 if (argv[0] == "-h" && argv[1] == "ML")
                 {
                     type |= ArgumentType.LinearConflict;
+                }
+
+                if (argv[0] == "-h" && argv[1] == "H")
+                {
+                    type |= ArgumentType.Hamming;
                 }
             }
             else

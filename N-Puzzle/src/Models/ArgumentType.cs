@@ -8,6 +8,7 @@ namespace NPuzzle.src.Models
         Euclidian = 1 << 1,
         Manathan = 1 << 2,
         LinearConflict = 1 << 3,
-        InputFile = 1 << 4
+        Hamming = 1 << 4,
+        InputFile = 1 << 5
     }
 }

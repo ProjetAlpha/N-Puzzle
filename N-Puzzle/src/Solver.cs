@@ -32,6 +32,8 @@ namespace NPuzzle.src
                 Heuristic.ManhattanDistance(_goalMap, prevNode, newNode);
             if ((_type & ArgumentType.LinearConflict) != 0)
                 Heuristic.ManathanLinearConflict(_goalMap, prevNode, newNode);
+            if ((_type & ArgumentType.Hamming) != 0)
+                Heuristic.HammingDistance(_goalMap, prevNode, newNode);
         }
 
         private int[][] Swap(int[][] Board, Vector2 v1, Vector2 v2)
@@ -76,6 +78,7 @@ namespace NPuzzle.src
             int i = 0;
             // Opti'++ : - faire une seul boucle qui calcul les 4 heuristiques (reduit de X4 les boucles).
             //           - tableau de 16 * 4 bits / case (reduit de X4 les boucles).
+            // 
             if (node.ZeroPosition != null)
             {
                 Vector2 pos = node.ZeroPosition;
@@ -194,6 +197,8 @@ namespace NPuzzle.src
             Console.Clear();
 
             int nLines = 2 * ((node.Cost * _puzzleSize) + _puzzleSize) + 2 * (node.Cost + 1);
+            int totalMoves = 0;
+
             string[] result = new string[nLines];
             Node[] nodes = new Node[node.Cost + 1];
 
@@ -221,11 +226,8 @@ namespace NPuzzle.src
                 node = node.Parent;
             }
 
-            // TODO : mettre en couleur les 2 cases qui ont swap ?
-            // ConsoleColor[] colors = (ConsoleColor[]) ConsoleColor.GetValues(typeof(ConsoleColor));
-            // Console.ForegroundColor = color
-            // Console.BackgroundColor = color;
-            // Console.ResetColor();
+            totalMoves = iNode;
+
             while (iNode-- > 0)
             {
                 for (int i = 0; i < nodes[iNode].Board.Length; i++)
@@ -243,8 +245,15 @@ namespace NPuzzle.src
                 Console.WriteLine();
             }
 
+            Console.WriteLine();
+            Console.WriteLine("A solution has been found in {0}", totalMoves);
+            Console.WriteLine("Complexity in time: {0} opened states in total", _openListHash.Count);
+
             // TODO: complexity time / space.
             // space:len(open_set), time=len(closed_set)
+            // A solution has been found in 14 move(s) and 0.002s.
+            // Complexity in time: 52 opened states in total.
+            // Complexity in size: 31 maximum opened states at once.
         }
 
         public void AStar(Node start)
@@ -256,9 +265,11 @@ namespace NPuzzle.src
             while (priorityQueue.Count > 0)
             {
                 Node headNode = priorityQueue.Dequeue();
+
                 if (_closedListHash.ContainsKey(headNode.Id)) continue;
 
                 _closedListHash.Add(headNode.Id, headNode);
+
                 Node[] nodes = GetNodes(headNode);
 
                 if (_isGoalReach)
@@ -285,7 +296,6 @@ namespace NPuzzle.src
                     }
                 }
             }
-
         }
     }
 }
