@@ -143,8 +143,8 @@ namespace NPuzzle.src
         {
             int distance = 0;
             int nMatch = 0;
-            int countWrongTiles = 0;
             int countWrongCorner = 0;
+            int countWrongTiles = 0;
 
             int[][] dst = new int[prevNode.Board.Length][];
             StringBuilder sb = new StringBuilder();
@@ -176,10 +176,10 @@ namespace NPuzzle.src
                     map.IndexMap.TryGetValue(number, out Vector2 vec2);
                     distance += FastAbs(vec2.Y - i) + FastAbs(vec2.X - j);
 
+                    countWrongCorner+= GetCornerConflicts(new Vector2 { X = j, Y = i }, number, map, prevNode, newNode);
+
                     if (vec2.X != j && vec2.Y != i)
                         ++countWrongTiles;
-
-                    countWrongCorner+= GetCornerConflicts(new Vector2 { X = j, Y = i }, number, map, prevNode, newNode);
                 }
             }
 
@@ -187,10 +187,7 @@ namespace NPuzzle.src
             newNode.maxNumber = prevNode.maxNumber;
             newNode.Board = dst;
             newNode.IsGoal = newNode.Board.Length * newNode.Board.Length == nMatch;
-            // + countWrongTiles +  2 * countWrongCorner;
-            if (countWrongCorner > 0)
-                Console.WriteLine("Count > 0");
-            newNode.Heuristic = distance + 2 * countWrongCorner;
+            newNode.Heuristic = countWrongCorner > 0 ? distance + 2 * countWrongCorner + countWrongTiles : distance;
         }
 
         public static void ManhattanDistance(GoalMap map, Node prevNode, Node newNode)
@@ -365,7 +362,7 @@ namespace NPuzzle.src
             newNode.maxNumber = prevNode.maxNumber;
             newNode.Board = dst;
             newNode.IsGoal = newNode.Board.Length * newNode.Board.Length == nMatch;
-            newNode.Heuristic = distance + 2 * conflicts;
+            newNode.Heuristic = conflicts > 0 ? distance + 2 * conflicts : distance;
         }
     }
 }

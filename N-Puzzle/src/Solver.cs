@@ -254,12 +254,8 @@ namespace NPuzzle.src
             Console.WriteLine();
             Console.WriteLine("A solution has been found in {0} moves.", totalMoves);
             Console.WriteLine("Complexity in time: {0} opened states in total.", _openListHash.Count);
+            // open list  + closed list ?
             Console.WriteLine("Complexity in size: {0} maximum opened states at once.", _maxExpanded);
-
-            // TODO: complexity time / space.
-            // A solution has been found in 14 move(s) and 0.002s.
-            // Complexity in time: 52 opened states in total.
-            // Complexity in size: 31 maximum opened states at once.
         }
 
         public void AStar(Node start)

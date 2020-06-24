@@ -191,15 +191,6 @@ namespace NPuzzle.src
                             }
                         }
 
-                        // Check puzzle validity.
-
-                        // bug 3*3 puzzle.
-                        /*if (!CheckValidity.IsSolvable(Puzzle, PuzzleSize))
-                        {
-                            Console.WriteLine("Unsolvable N-puzzle.");
-                            System.Environment.Exit(-1);
-                        }*/
-
                         // Generate puzzle solution.
 
                         int[][] goalMap = MapGenerator.GetGoalMap(PuzzleSize,
@@ -214,6 +205,14 @@ namespace NPuzzle.src
                             DigitStrRepresentation = MapStrRepresentation,
                             Corners = corners
                         };
+
+                        // Check puzzle validity.
+
+                        if (!CheckValidity.IsSolvable(Puzzle, PuzzleSize, map))
+                        {
+                            Console.WriteLine("Unsolvable N-puzzle.");
+                            System.Environment.Exit(-1);
+                        }
 
                         // Initialize start node puzzle.
 

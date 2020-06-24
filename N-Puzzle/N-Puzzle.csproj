@@ -52,6 +52,7 @@
     <Compile Include="src\Heuristic.cs" />
     <Compile Include="src\Models\NextBoardPosition.cs" />
     <Compile Include="src\Models\CornerTile.cs" />
+    <Compile Include="src\BinaryArray.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
