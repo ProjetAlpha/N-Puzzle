@@ -187,7 +187,7 @@ namespace NPuzzle.src
             newNode.maxNumber = prevNode.maxNumber;
             newNode.Board = dst;
             newNode.IsGoal = newNode.Board.Length * newNode.Board.Length == nMatch;
-            newNode.Heuristic = countWrongCorner > 0 ? distance + 2 * countWrongCorner + countWrongTiles : distance;
+            newNode.Heuristic = countWrongCorner > 0 ? distance + 2 * countWrongCorner : distance;
         }
 
         public static void ManhattanDistance(GoalMap map, Node prevNode, Node newNode)
@@ -316,53 +316,52 @@ namespace NPuzzle.src
 
                     if (j == vec2.Y && i == vec2.X) continue;
 
-                    if (j == vec2.Y)
-                    {
+                    // X = I, Y = J
+                    // Two tiles ‘a’ and ‘b’ are in a linear conflict if they are in the same row or column ,
+                    // also their goal positions are in the same row or column
+                    // and the goal position of one of the tiles is blocked by the other tile in that row.
                         // check down for conflicts
                         for (int l = 0; l < prevNode.Board.Length; l++)
                         {
-                            if (prevNode.Board[l][j] == 0) continue;
-
                             int n2 = prevNode.Board[l][j];
 
                             if (IsNextPosition(newNode.nextBoardPosition, l, j))
                                 n2 = GetNextPosition(newNode.nextBoardPosition, l, j);
 
+                            if (n2 == 0) continue;
+
                             map.IndexMap.TryGetValue(n2, out Vector2 vect);
-                            if (vec2.X > vect.X && vect.Y == j)
+                            if (vec2.X < vect.X && vect.Y == j && vect.Y == vec2.Y)
                             {
-                                ++conflicts;
+                                conflicts+=2;
                             }
                         }
-                    }
 
-                    if (i == vec2.X)
-                    {
                         // check right for conflicts
                         for (int k = 0; k < prevNode.Board[i].Length; k++)
                         {
-                            if (prevNode.Board[i][k] == 0) continue;
-
                             int n2 = prevNode.Board[i][k];
 
                             if (IsNextPosition(newNode.nextBoardPosition, i, k))
                                 n2 = GetNextPosition(newNode.nextBoardPosition, i, k);
 
+                            if (n2 == 0) continue;
+
                             map.IndexMap.TryGetValue(n2, out Vector2 vect);
-                            if (vec2.Y > vect.Y && vect.X == i)
+                            if (vec2.Y < vect.Y && vect.X == i && vect.X == vec2.X)
                             {
-                                ++conflicts;
+                                conflicts+=2;
                             }
                         }
-                    }
                 }
             }
-
+            if (conflicts > 0)
+                Console.WriteLine(" conflicts : {0}", conflicts);
             newNode.Id = sb.ToString();
             newNode.maxNumber = prevNode.maxNumber;
             newNode.Board = dst;
             newNode.IsGoal = newNode.Board.Length * newNode.Board.Length == nMatch;
-            newNode.Heuristic = conflicts > 0 ? distance + 2 * conflicts : distance;
+            newNode.Heuristic = distance + conflicts;
         }
     }
 }

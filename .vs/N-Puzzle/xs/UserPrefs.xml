@@ -1,22 +1,22 @@
 ﻿<Properties StartupConfiguration="{F4B42E66-A31B-4FCB-B7D1-125DBCE6F36F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="N-Puzzle/src/OptimizedStructure.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="N-Puzzle/src/Heuristic.cs">
     <Files>
       <File FileName="N-Puzzle/Program.cs" Line="18" Column="35" />
       <File FileName="N-Puzzle/Properties/AssemblyInfo.cs" Line="1" Column="1" />
       <File FileName="N-Puzzle/packages.config" Line="1" Column="1" />
-      <File FileName="N-Puzzle/src/Parser.cs" Line="157" Column="1" />
-      <File FileName="N-Puzzle/src/CheckValidity.cs" Line="112" Column="34" />
+      <File FileName="N-Puzzle/src/Parser.cs" Line="202" Column="50" />
+      <File FileName="N-Puzzle/src/CheckValidity.cs" Line="54" Column="31" />
       <File FileName="N-Puzzle/src/Models/Node.cs" Line="16" Column="37" />
       <File FileName="N-Puzzle/src/Models/ArgumentType.cs" Line="11" Column="26" />
       <File FileName="N-Puzzle/src/MapGenerator.cs" Line="46" Column="31" />
-      <File FileName="N-Puzzle/src/Solver.cs" Line="278" Column="1" />
+      <File FileName="N-Puzzle/src/Solver.cs" Line="291" Column="100" />
       <File FileName="N-Puzzle/src/Models/Vector2.cs" Line="6" Column="14" />
       <File FileName="N-Puzzle/src/Models/GoalMap.cs" Line="12" Column="62" />
-      <File FileName="N-Puzzle/src/Heuristic.cs" Line="114" Column="43" />
+      <File FileName="N-Puzzle/src/Heuristic.cs" Line="348" Column="51" />
       <File FileName="N-Puzzle/src/Models/NextBoardPosition.cs" Line="8" Column="55" />
       <File FileName="N-Puzzle/N-Puzzle.csproj" Line="1" Column="1" />
       <File FileName="N-Puzzle/src/Models/CornerTile.cs" Line="10" Column="38" />
-      <File FileName="N-Puzzle/src/OptimizedStructure.cs" Line="7" Column="10" />
+      <File FileName="N-Puzzle/src/BinaryArray.cs" Line="19" Column="12" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,7 +24,7 @@
           <Node name="N-Puzzle" expanded="True">
             <Node name="N-Puzzle" expanded="True">
               <Node name="src" expanded="True">
-                <Node name="OptimizedStructure.cs" selected="True" />
+                <Node name="Heuristic.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -34,7 +34,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.N-Puzzle PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

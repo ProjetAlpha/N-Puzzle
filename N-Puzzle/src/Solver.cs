@@ -288,12 +288,12 @@ namespace NPuzzle.src
                     {
                         if (node.Heuristic > nodes[i].Heuristic && node.Cost >= nodes[i].Cost)
                         {
-                            priorityQueue.Enqueue(nodes[i], nodes[i].Heuristic);
+                            // priorityQueue.Enqueue(nodes[i], nodes[i].Heuristic + nodes[i].Cost);
                         }
                     }
                     else
                     {
-                        priorityQueue.Enqueue(nodes[i], nodes[i].Heuristic);
+                        priorityQueue.Enqueue(nodes[i], nodes[i].Heuristic + nodes[i].Cost);
                         _openListHash.Add(nodes[i].Id, nodes[i]);
                     }
                 }
